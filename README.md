@@ -31,11 +31,13 @@ echo "export PRYZM_PORT="41"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-# download binary
+**download binary**
+```
 cd $HOME
 wget https://storage.googleapis.com/pryzm-zone/core/0.18.0/pryzmd-0.18.0-linux-amd64.tar.gz
 tar -xzvf $HOME/pryzmd-0.18.0-linux-amd64.tar.gz
 mv pryzmd $HOME/go/bin
+```
 
 # config and init app
 pryzmd config node tcp://localhost:${PRYZM_PORT}657
