@@ -39,11 +39,13 @@ tar -xzvf $HOME/pryzmd-0.18.0-linux-amd64.tar.gz
 mv pryzmd $HOME/go/bin
 ```
 
-# config and init app
+**config and init app**
+```
 pryzmd config node tcp://localhost:${PRYZM_PORT}657
 pryzmd config keyring-backend os
 pryzmd config chain-id indigo-1
 pryzmd init "test" --chain-id indigo-1
+```
 
 # download genesis and addrbook
 wget -O $HOME/.pryzm/config/genesis.json https://server-4.itrocket.net/testnet/pryzm/genesis.json
