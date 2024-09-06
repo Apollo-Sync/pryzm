@@ -53,12 +53,13 @@ wget -O $HOME/.pryzm/config/genesis.json https://server-4.itrocket.net/testnet/p
 wget -O $HOME/.pryzm/config/addrbook.json  https://server-4.itrocket.net/testnet/pryzm/addrbook.json
 ```
 
-# set seeds and peers
+**set seeds and peers**
+```
 SEEDS="fbfd48af73cd1f6de7f9102a0086ac63f46fb911@pryzm-testnet-seed.itrocket.net:41656"
 PEERS="713307ce72306d9e86b436fc69a03a0ab96b678f@pryzm-testnet-peer.itrocket.net:41656,089fc2d0d012c2417f9eb8e176f4a7811027050c@213.199.45.120:41656,486c8e5c2f128cc6424773891b8bfa2b02890495@194.163.137.83:23256,b5cbda80baeb1f9ad91e5246dc3715ef48caeff6@185.119.116.228:26656,a9c9f21f4519fd1cce4b4ddd356b5c47e6c24386@81.1.13.238:23256,013efc1bb66c696aada395019e8cdf57f5ccc106@85.10.211.215:27722,5d00ca94af3b6bde01f5684b81b9fd9a03fa0eeb@84.247.190.189:656,7cdc65a90e252709b562556f7625830e9599f33c@65.21.203.242:14656,db0e0cff276b3292804474eb8beb83538acf77f5@195.14.6.192:26656,cdcd86ca01858275d0e78ee66b82109ee06df454@65.108.72.253:40656,0642040be904101264ffea9c2af861b37d2be335@173.249.50.178:41656"
 sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
        -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" $HOME/.pryzm/config/config.toml
-
+```
 
 # set custom ports in app.toml
 sed -i.bak -e "s%:1317%:${PRYZM_PORT}317%g;
