@@ -47,9 +47,11 @@ pryzmd config chain-id indigo-1
 pryzmd init "test" --chain-id indigo-1
 ```
 
-# download genesis and addrbook
+**download genesis and addrbook**
+```
 wget -O $HOME/.pryzm/config/genesis.json https://server-4.itrocket.net/testnet/pryzm/genesis.json
 wget -O $HOME/.pryzm/config/addrbook.json  https://server-4.itrocket.net/testnet/pryzm/addrbook.json
+```
 
 # set seeds and peers
 SEEDS="fbfd48af73cd1f6de7f9102a0086ac63f46fb911@pryzm-testnet-seed.itrocket.net:41656"
