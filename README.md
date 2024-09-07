@@ -61,7 +61,8 @@ sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
        -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" $HOME/.pryzm/config/config.toml
 ```
 
-# set custom ports in app.toml
+**set custom ports in app.toml**
+```
 sed -i.bak -e "s%:1317%:${PRYZM_PORT}317%g;
 s%:8080%:${PRYZM_PORT}080%g;
 s%:9090%:${PRYZM_PORT}090%g;
@@ -69,14 +70,17 @@ s%:9091%:${PRYZM_PORT}091%g;
 s%:8545%:${PRYZM_PORT}545%g;
 s%:8546%:${PRYZM_PORT}546%g;
 s%:6065%:${PRYZM_PORT}065%g" $HOME/.pryzm/config/app.toml
+```
 
-# set custom ports in config.toml file
+**set custom ports in config.toml file**
+```
 sed -i.bak -e "s%:26658%:${PRYZM_PORT}658%g;
 s%:26657%:${PRYZM_PORT}657%g;
 s%:6060%:${PRYZM_PORT}060%g;
 s%:26656%:${PRYZM_PORT}656%g;
 s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${PRYZM_PORT}656\"%;
 s%:26660%:${PRYZM_PORT}660%g" $HOME/.pryzm/config/config.toml
+```
 
 # config pruning
 sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.pryzm/config/app.toml
