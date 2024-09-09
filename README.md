@@ -94,7 +94,8 @@ sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0.015upryzm"|g' $HOME/.pr
 sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.pryzm/config/config.toml
 sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.pryzm/config/config.toml
 
-# create service file
+**create service file**
+```
 sudo tee /etc/systemd/system/pryzmd.service > /dev/null <<EOF
 [Unit]
 Description=Pryzm node
@@ -109,8 +110,9 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
+```
 
-# reset and download snapshot
+**reset and download snapshot**
 pryzmd tendermint unsafe-reset-all --home $HOME/.pryzm
 if curl -s --head curl https://server-4.itrocket.net/testnet/pryzm/pryzm_2024-09-01_4101046_snap.tar.lz4 | head -n 1 | grep "200" > /dev/null; then
   curl https://server-4.itrocket.net/testnet/pryzm/pryzm_2024-09-01_4101046_snap.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.pryzm
