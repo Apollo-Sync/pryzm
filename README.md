@@ -124,7 +124,8 @@ if curl -s --head curl https://server-4.itrocket.net/testnet/pryzm/pryzm_2024-09
 fi
 ```
 
-# enable and start service
+**enable and start service**
+```
 sudo systemctl daemon-reload
 sudo systemctl enable pryzmd
 sudo systemctl restart pryzmd && sudo journalctl -u pryzmd -f
@@ -132,6 +133,7 @@ Automatic Installation
 pruning: nothing: 100/0/10 | indexer: null
 
 source <(curl -s https://itrocket.net/api/testnet/pryzm/autoinstall/)
+```
 Create wallet
 # to create a new wallet, use the following command. don’t forget to save the mnemonic
 pryzmd keys add $WALLET
