@@ -134,9 +134,11 @@ pruning: nothing: 100/0/10 | indexer: null
 
 source <(curl -s https://itrocket.net/api/testnet/pryzm/autoinstall/)
 ```
-Create wallet
-# to create a new wallet, use the following command. don’t forget to save the mnemonic
+
+**Create wallet**
+```
 pryzmd keys add $WALLET
+```
 
 # to restore exexuting wallet, use the following command
 pryzmd keys add $WALLET --recover
