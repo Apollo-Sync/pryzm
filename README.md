@@ -140,8 +140,10 @@ source <(curl -s https://itrocket.net/api/testnet/pryzm/autoinstall/)
 pryzmd keys add $WALLET
 ```
 
-# to restore exexuting wallet, use the following command
+**to restore exexuting wallet, use the following command**
+```
 pryzmd keys add $WALLET --recover
+```
 
 # save wallet and validator address
 WALLET_ADDRESS=$(pryzmd keys show $WALLET -a)
