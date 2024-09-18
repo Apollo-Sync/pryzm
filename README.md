@@ -159,9 +159,12 @@ source $HOME/.bash_profile
 pryzmd status 2>&1 | jq 
 ```
 
-# before creating a validator, you need to fund your wallet and check balance
-pryzmd query bank balances $WALLET_ADDRESS 
-Create validator
+**before creating a validator, you need to fund your wallet and check balance**
+```
+pryzmd query bank balances $WALLET_ADDRESS
+```
+
+**Create validator**
 Moniker
 Identity
 Details
