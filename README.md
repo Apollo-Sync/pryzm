@@ -165,19 +165,7 @@ pryzmd query bank balances $WALLET_ADDRESS
 ```
 
 **Create validator**
-Moniker
-Identity
-Details
-I love blockchain ❤️
-Amount, upryzm
-1000000
-Commission rate
-0.1
-Commission max rate
-0.2
-Commission max change rate
-0.01
-Website
+```
 pryzmd tx staking create-validator \
 --amount 1000000upryzm \
 --from $WALLET \
@@ -193,7 +181,8 @@ pryzmd tx staking create-validator \
 --chain-id indigo-1 \
 --fees 3000upryzm \
 -y
-Monitoring
+```
+
 If you want to have set up a monitoring and alert system use our cosmos nodes monitoring guide with tenderduty
 
 Security
