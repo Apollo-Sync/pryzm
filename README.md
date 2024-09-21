@@ -193,10 +193,12 @@ sudo ufw allow ${PRYZM_PORT}656/tcp
 sudo ufw enable
 ```
 
-Delete node
+**Delete node**
+```
 sudo systemctl stop pryzmd
 sudo systemctl disable pryzmd
 sudo rm -rf /etc/systemd/system/pryzmd.service
 sudo rm $(which pryzmd)
 sudo rm -rf $HOME/.pryzm
 sed -i "/PRYZM_/d" $HOME/.bash_profile
+```
